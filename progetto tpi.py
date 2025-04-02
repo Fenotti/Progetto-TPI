@@ -1,12 +1,17 @@
 import serial
+
 import threading
+
 import dearpygui.dearpygui as dpg
+
 import json
+
 import time
-#ciao
+
 
 DATA_FILE = "data_sensore.json"
 DATA_LIST = []
+
 NSAMPLES = 50
 
 
@@ -40,8 +45,11 @@ def update_plot():
         hums = [i["humidity"] for i in DATA_LIST]
 
         dpg.set_value("temp_series", [times, temps])
+
         dpg.set_value("hum_series", [times, hums])
+
         dpg.set_axis_limits("x_axis", min(times), max(times))
+
         dpg.set_axis_limits("y_axis", 0, 50)
         dpg.configure_item("temp_series", label=f"Temperatura (°C): {temps[-1]:.2f}")
         dpg.configure_item("hum_series", label=f"Umidità (%): {hums[-1]:.2f}")
