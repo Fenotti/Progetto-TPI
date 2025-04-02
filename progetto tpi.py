@@ -3,6 +3,7 @@ import threading
 import dearpygui.dearpygui as dpg
 import json
 import time
+#ciao
 
 DATA_FILE = "data_sensore.json"
 DATA_LIST = []
